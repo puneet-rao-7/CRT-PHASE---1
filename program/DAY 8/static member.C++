@@ -1,21 +1,28 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class student{
-    public:
+class Student
+{
+public:
     static int reg_no;
-    student(){
+    Student()
+    {
         reg_no++;
     }
-}
-int student::reg_no = 100; //initialization of static member
-int main(){
-    student s1;
-    student s2;
-    student s3;
 
-    student :: showregno(); //accessing static member using class name and scope resolution operator
-
-
+    static void showRegNo()
+    {
+        cout << "Registration number: " << reg_no << endl;
+    }
+};
+int Student ::reg_no = 100;
+int main()
+{
+    Student s1;
+    Student s2;
+    Student s3;
+    Student ::showRegNo();
+    Student s4;
+    Student ::showRegNo();
     return 0;
 }
